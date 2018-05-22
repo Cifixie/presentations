@@ -1,4 +1,5 @@
 const path = require("path")
+const webpack = require("webpack")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -15,13 +16,13 @@ module.exports = {
           test: /\.js?$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
-        }
+        },
       ]
     },
     plugins: [
       new HtmlWebpackPlugin({
-          title: 'Debugging demo',
           filename: path.resolve('dist', 'index.html'),
+          template: path.resolve('build', 'index.html'),
           inject: true,
       }),
     ],
