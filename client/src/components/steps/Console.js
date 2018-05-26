@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Button } from "../Components"
+import usersService from '../../services/users'
 
 const getRandomNumber = () => Math.round(Math.random() * 10)
 const dummy = {
@@ -35,6 +36,9 @@ class Console extends Component {
     })
   }
 
+  getUsers = async () => {
+    console.log(await usersService.getUsers())
+  }
 
   render() {
     const { count } = this.state
@@ -49,7 +53,7 @@ class Console extends Component {
         <Button good onClick={this.increase}>+</Button>
         <Button bad onClick={this.decrease}>-</Button>
         <strong>{count}</strong>
-        <Button onClick={() => NumbersIdontLike.forEach(a => console.log(a))}>
+        <Button onClick={this.getUsers}>
           spam
         </Button>
       </div>

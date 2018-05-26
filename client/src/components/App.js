@@ -15,14 +15,15 @@ class App extends Component {
   render() {
     return (
       <Presentation data={[
-        {},
-        { x: 1000, y: -1000, rotateX: 45 },
+        { x: 0, y: 0, rotateX: 0 },
+        { x: 0, y: 0, rotateX: 90 },
         { x: -1000, y: -1000, rotateX: 90 },
-        { x: 1000, y: 1000, rotateX: 135 },
+        { x: 1000, y: 1000, rotateX: 180 },
       ]}>
         <Me />
         <Console />
         <Breakpoints />
+        <Todo />
       </Presentation>
     );
   }

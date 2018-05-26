@@ -1,10 +1,15 @@
 const path = require("path")
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack');
+require("babel-polyfill");
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: [
+      "babel-polyfill",
+      path.resolve(__dirname, 'src', 'index.js')
+    ],
     output: {
         filename: 'bundle_[hash:6].js',
         path: path.resolve(__dirname, 'dist'),
@@ -24,6 +29,7 @@ module.exports = {
       ]
     },
     plugins: [
+      new Dotenv(),
       new HtmlWebpackPlugin({
           filename: path.resolve('dist', 'index.html'),
           template: path.resolve('build', 'index.html'),
