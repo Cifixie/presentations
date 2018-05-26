@@ -2,23 +2,13 @@ import React, { Component } from "react"
 import { Button, List, Code } from "../Components"
 import usersService from '../../services/users'
 
-const getRandomNumber = () => Math.round(Math.random() * 10)
-const dummy = {
-  boolean: true,
-  number: 7,
-  string: 'loso'
-}
-
-const NumbersIdontLike = Array(30)
-  .fill(true)
-  .map(getRandomNumber)
-  .map(a => a > 9 ? dummy : null)
-
 class Console extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      debug: false,
+      fix: false,
     };
   }
 
@@ -38,10 +28,19 @@ class Console extends Component {
 
   getUsers = async () => {
     const users = await usersService.getUsers();
+    if (this.state.debug) console.debug(users)
     users.forEach(u => {
-      console.log(`user's ${u.name} age is ${u.age}`)
+      if (this.state.fix) {
+          if (!u.name) console.debug(u)
+      }
+      else {
+        console.log(`user's ${u.name.firstName} age is ${u.age}`)
+      }
     })
   }
+  toggleState = (key) => () => this.setState({
+    [key]: !this.state[key]
+  })
 
   render() {
     const { count } = this.state
@@ -58,7 +57,13 @@ class Console extends Component {
         <Button bad onClick={this.decrease}>-</Button>
         <strong>{count}</strong>
         <Button onClick={this.getUsers}>
-          spam
+          getUsers
+        </Button>
+        <Button onClick={this.toggleState('debug')}>
+          Debug ({this.state.debug ? "on" : "off"})
+        </Button>
+        <Button onClick={this.toggleState('fix')}>
+          Fix ({ this.state.fix ? "on" : "off"})
         </Button>
       </div>
     );

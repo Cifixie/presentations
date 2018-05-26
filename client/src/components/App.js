@@ -16,22 +16,38 @@ import Mental from './steps/Mental'
 import Override from './steps/Override'
 import Server from './steps/Server'
 import Tools from './steps/Tools'
+import Vscode from './steps/Vscode'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    window.onpopstate = (event) => this.onLocationUpdated(event.target.location.hash)
+    this.state = {
+      location: null
+    }
+  }
+
+  onLocationUpdated = (location) => {
+    this.setState({
+      location
+    })
+  }
+
   render() {
     return (
       <Presentation data={[
-        { x: 0, y: 0, rotateX: 0 },
-        { x: -1000, y: -1000, rotateX: 0 },
-        { x: -2000, y: -2000, rotateX: 0 },
-        { x: -3000, y: -3000, rotateX: 0 },
-        { x: -4000, y: -4000, rotateX: 0 },
-        { x: -5000, y: -5000, rotateX: 0 },
-        { x: -6000, y: -6000, rotateX: 0 },
-        { x: -7000, y: -7000, rotateX: 0 },
-        { x: -8000, y: -8000, rotateX: 0 },
-        { x: -9000, y: -9000, rotateX: 0 },
-        { x: -10000, y: -10000, rotateX: 0 },
+        { x: 0, y:  4500, rotateY: 90 },
+        { x: -4500, y: 4500, rotateX: 90 },
+        { x: 4500, y: 4500, rotateX: 90 },
+        { x: 4500, y: -1500, rotateX: 90 },
+        { x: 4500, y: 0, rotateY: 90 },
+        { x: 1500, y: 4500, rotateX: 90 },
+        { x: 4500, y: 3000, rotateY: 90 },
+        { x: 3000, y: 4500, rotateY: 90 },
+        { x: -3000, y: 4500, rotateY: 90 },
+        { x: -1500, y: 4500, rotateX: 90 },
+        { x: 4500, y: -3000, rotateX: 180 },
+        { x: 0, y:  0, rotateY: 90 },
       ]}>
         <Me />
         <Console />
@@ -39,6 +55,7 @@ class App extends Component {
         <Conditioning />
         <Fancy />
         <Server />
+        <Vscode />
         <Fyi />
         <Override />
         <Tools />

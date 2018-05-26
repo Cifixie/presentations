@@ -5,15 +5,21 @@ import usersService from '../../services/users'
 class Breakpoints extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      fix: false,
+    };
   }
 
-  doSomething = async () => {
+  getUsers = async () => {
     const users = await usersService.getUsers();
-    debugger
     users.forEach(u => {
-      console.log(`user's ${u.name} age is ${u.age}`)
+      if (!this.state.fix) console.log(`user's ${u.name.firstName} age is ${u.age}`)
     })
   }
+
+  toggleState = (key) => () => this.setState({
+    [key]: !this.state[key]
+  })
 
   render() {
     return (
@@ -25,7 +31,10 @@ class Breakpoints extends Component {
           <li>Expressions</li>
           <li>Watches</li>
         </List>
-        <Button onClick={this.doSomething}>Do something</Button>
+        <Button onClick={this.getUsers}>Get Users</Button>
+        <Button onClick={this.toggleState('fix')}>
+          Fix ({ this.state.fix ? "on" : "off"})
+        </Button>
       </div>
     );
   }
