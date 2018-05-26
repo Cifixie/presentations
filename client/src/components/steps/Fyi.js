@@ -3,7 +3,7 @@ import { List } from "../Components"
 
 export default () => (
     <Fragment>
-        <h1>About myself</h1>
+        <h1>Quick fun things</h1>
         <List>
             <li>On the internet: <strong>Cifixie</strong></li>
             <li>Mainly Web, <strong>PHP</strong> & <strong>Javascript</strong></li>

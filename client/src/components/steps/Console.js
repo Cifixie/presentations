@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button } from "../Components"
+import { Button, List, Code } from "../Components"
 import usersService from '../../services/users'
 
 const getRandomNumber = () => Math.round(Math.random() * 10)
@@ -37,7 +37,10 @@ class Console extends Component {
   }
 
   getUsers = async () => {
-    console.log(await usersService.getUsers())
+    const users = await usersService.getUsers();
+    users.forEach(u => {
+      console.log(`user's ${u.name} age is ${u.age}`)
+    })
   }
 
   render() {
@@ -45,7 +48,8 @@ class Console extends Component {
     console.count("render")
     return (
       <div>
-        <h1>Console</h1>
+        <h1>Console.log</h1>
+        <p>It feels like it is still most common way of debugging</p>
         <ul>
           <li>Console log</li>
           <li>debug</li>

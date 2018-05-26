@@ -18,13 +18,12 @@ class Breakpoints extends Component {
   render() {
     return (
       <div>
-        <h1>Breakpoints (1/2)</h1>
-        <p>
-          <Code>Debugger</Code>: static breakpoint with in code
-        </p>
+        <h1>Fancy Breakpoints</h1>
         <List>
-          <li>Easy way of setting breakpoints where needed</li>
-          <li>Bit "under developed", but good thing to start with</li>
+          <li>Super fancy, much wow</li>
+          <li>Show case in chrome</li>
+          <li>Expressions</li>
+          <li>Watches</li>
         </List>
         <Button onClick={this.doSomething}>Do something</Button>
       </div>

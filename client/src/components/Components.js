@@ -21,3 +21,12 @@ export const Button = styled.div`
 export const Dia = styled(Step)`
   width: 100vw !important;
 `
+
+export const List = styled.ul`
+  list-style: circle;
+  margin-left: 1em;
+`
+
+export const Code = styled.code`
+  color: #f44336;
+`
