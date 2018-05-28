@@ -6,9 +6,6 @@ class Global extends Component {
   getUsers = async () => {
     (await usersService.getUsers()).forEach(user => console.table(user));
   };
-  worker = () => {
-    const a = new Worker("worker.js");
-  };
 
   render() {
     return (
@@ -18,11 +15,9 @@ class Global extends Component {
           <li>HRX (Network)</li>
           <li>EventListener Breakpoints</li>
           <li>Breakpoints not on my code &amp; production</li>
-          <li>Workers</li>
-          <li>serviceWorkers</li>
+          <li>Web Workers / serviceWorkers</li>
         </List>
         <Button onClick={this.getUsers}>GetUsers</Button>
-        <Button onClick={this.worker}>GetUsers</Button>
       </div>
     );
   }

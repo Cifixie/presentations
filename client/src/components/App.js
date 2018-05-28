@@ -57,12 +57,12 @@ class App extends Component {
         <Breakpoints />
         <Conditioning />
         <Global />
-        <Override />
         <Server />
         <Vscode />
         <Tools />
         <Mental />
         <Fyi />
+        <Override />
         <Farewells />
       </Presentation>
     );
