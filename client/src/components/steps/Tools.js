@@ -7,8 +7,8 @@ export default () => (
     <p>Helps you to reduce mental insecure</p>
     <List>
       <li />
-      <li>Yellow labs</li>
-      <li>Audit</li>
+      <li>Audit tools (Yellow labs / WebPage</li>
+      <li />
       <li>Test</li>
       <li>...</li>
     </List>
