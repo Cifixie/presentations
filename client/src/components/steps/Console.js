@@ -31,7 +31,7 @@ class Console extends Component {
     if (this.state.debug) console.debug(users);
     users.forEach(u => {
       if (this.state.fix) {
-        if (!u.name) console.debug(u);
+        if (!u.name) console.table(u);
         else console.log(`user's ${u.name.firstName} age is ${u.age}`);
       } else {
         console.log(`user's ${u.name.firstName} age is ${u.age}`);
@@ -53,6 +53,7 @@ class Console extends Component {
         <List>
           <li>console.log</li>
           <li>console.debug</li>
+          <li>console.table</li>
         </List>
         <Button bad onClick={this.decrease}>
           -

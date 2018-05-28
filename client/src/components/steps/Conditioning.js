@@ -28,12 +28,12 @@ class Breakpoints extends Component {
       <div>
         <h1>Breakpoints</h1>
         <List>
-          <li>Supercharged</li>
-          <li>More elegant</li>
-          <li>Conditioning (Expressions)</li>
+          <li>Supercharged, more elegant way</li>
+          <li>No need for code changes</li>
           <li>Watches</li>
-          <li>Breakpoints not on my code</li>
-          <li />
+          <li>
+            <strong>Next level:</strong> Conditioning (Expressions)
+          </li>
         </List>
         <Button onClick={this.getUsers}>Get Users</Button>
         <Button onClick={this.toggleState("fix")}>

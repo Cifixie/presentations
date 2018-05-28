@@ -13,6 +13,7 @@
   "scripts": {
     "start": "node src/index.js",
     "inspect": "node  --inspect src/index.js",
+    "inspect-brk": "node  --inspect-brk src/index.js",
     "test": "jest"
   },
   "devDependencies": {

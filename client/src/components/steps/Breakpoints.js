@@ -29,11 +29,11 @@ class Breakpoints extends Component {
       <div>
         <h1>Debugger (keyword)</h1>
         <p>
-          <Code>Debugger</Code>: static breakpoint with in code
+          <Code>Debugger</Code>: static breakpoint within code
         </p>
         <List>
           <li>Easy way of setting breakpoints where needed</li>
-          <li>Bit "under developed", but good thing to start with</li>
+          <li>A Hammer, one of my go-to-tools</li>
           <li>Allows us to eval code paused</li>
         </List>
         <Button onClick={this.getUsers}>Get Users</Button>
