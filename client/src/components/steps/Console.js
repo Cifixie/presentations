@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import { Button, List, Code } from "../Components"
-import usersService from '../../services/users'
+import React, { Component } from "react";
+import { Button, List, Code } from "../Components";
+import usersService from "../../services/users";
 
 class Console extends Component {
   constructor(props) {
@@ -8,67 +8,70 @@ class Console extends Component {
     this.state = {
       count: 0,
       debug: false,
-      fix: false,
+      fix: false
     };
   }
 
   decrease = () => {
-    console.log(this.state.count)
+    console.log(this.state.count);
     this.setState({
-      count: --this.state.count,
-    })
-  }
+      count: --this.state.count
+    });
+  };
 
   increase = () => {
-    console.debug(this.state.count)
+    console.debug(this.state.count);
     this.setState({
-      count: ++this.state.count,
-    })
-  }
+      count: ++this.state.count
+    });
+  };
 
   getUsers = async () => {
     const users = await usersService.getUsers();
-    if (this.state.debug) console.debug(users)
+    if (this.state.debug) console.debug(users);
     users.forEach(u => {
       if (this.state.fix) {
-          if (!u.name) console.debug(u)
+        if (!u.name) console.debug(u);
+        else console.log(`user's ${u.name.firstName} age is ${u.age}`);
+      } else {
+        console.log(`user's ${u.name.firstName} age is ${u.age}`);
       }
-      else {
-        console.log(`user's ${u.name.firstName} age is ${u.age}`)
-      }
-    })
-  }
-  toggleState = (key) => () => this.setState({
-    [key]: !this.state[key]
-  })
+    });
+  };
+  toggleState = key => () =>
+    this.setState({
+      [key]: !this.state[key]
+    });
 
   render() {
-    const { count } = this.state
-    console.count("render")
+    const { count } = this.state;
+    console.count("render");
     return (
       <div>
         <h1>Console.log</h1>
         <p>It feels like it is still most common way of debugging</p>
-        <ul>
-          <li>Console log</li>
-          <li>debug</li>
-        </ul>
-        <Button bad onClick={this.decrease}>-</Button>
-        <strong>{count}</strong>
-        <Button good onClick={this.increase}>+</Button>
-        <br />
-        <Button onClick={this.getUsers}>
-          getUsers
+        <List>
+          <li>console.log</li>
+          <li>console.debug</li>
+        </List>
+        <Button bad onClick={this.decrease}>
+          -
         </Button>
-        <Button onClick={this.toggleState('debug')}>
+        <strong>{count}</strong>
+        <Button good onClick={this.increase}>
+          +
+        </Button>
+        <br />
+        <Button onClick={this.getUsers}>getUsers</Button>
+        <Button onClick={this.toggleState("debug")}>
           Debug ({this.state.debug ? "on" : "off"})
         </Button>
-        <Button onClick={this.toggleState('fix')}>
-          Fix ({ this.state.fix ? "on" : "off"})
+        <Button onClick={this.toggleState("fix")}>
+          Fix ({this.state.fix ? "on" : "off"})
         </Button>
       </div>
     );
   }
 }
 
-export default Console
+export default Console;

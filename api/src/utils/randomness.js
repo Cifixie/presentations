@@ -1,2 +1,2 @@
-
-module.exports = (probability, yes, no) => Math.random() > probability ? yes : no
+module.exports = (probability, yes, no) =>
+  Math.random() < probability ? yes : no;

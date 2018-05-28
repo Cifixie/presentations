@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Button, Code, List } from '../Components';
-import usersService from '../../services/users'
+import { Button, Code, List } from "../Components";
+import usersService from "../../services/users";
 
 class Breakpoints extends Component {
   constructor(props) {
@@ -9,11 +9,11 @@ class Breakpoints extends Component {
 
   doSomething = async () => {
     const users = await usersService.getUsers();
-    debugger
+    debugger;
     users.forEach(u => {
-      console.log(`user's ${u.name} age is ${u.age}`)
-    })
-  }
+      console.log(`user's ${u.name} age is ${u.age}`);
+    });
+  };
 
   render() {
     return (
@@ -21,9 +21,8 @@ class Breakpoints extends Component {
         <h1>Fancy Breakpoints</h1>
         <List>
           <li>HRX </li>
-          <li>Show case in chrome</li>
-          <li>Expressions</li>
-          <li>Watches</li>
+          <li>EventListener Breakpoints</li>
+          <li>ProductionCode</li>
         </List>
         <Button onClick={this.doSomething}>Do something</Button>
       </div>
@@ -31,4 +30,4 @@ class Breakpoints extends Component {
   }
 }
 
-export default Breakpoints
+export default Breakpoints;
