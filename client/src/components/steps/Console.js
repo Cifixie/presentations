@@ -53,9 +53,10 @@ class Console extends Component {
           <li>Console log</li>
           <li>debug</li>
         </ul>
-        <Button good onClick={this.increase}>+</Button>
         <Button bad onClick={this.decrease}>-</Button>
         <strong>{count}</strong>
+        <Button good onClick={this.increase}>+</Button>
+        <br />
         <Button onClick={this.getUsers}>
           getUsers
         </Button>

@@ -24,12 +24,14 @@ class Breakpoints extends Component {
   render() {
     return (
       <div>
-        <h1>Conditioning</h1>
+        <h1>Breakpoints</h1>
         <List>
-          <li>Super fancy, much wow</li>
-          <li>Show case in chrome</li>
-          <li>Expressions</li>
+          <li>Supercharged</li>
+          <li>More elegant</li>
+          <li>Conditioning (Expressions)</li>
           <li>Watches</li>
+          <li>Breakpoints not on my code</li>
+          <li></li>
         </List>
         <Button onClick={this.getUsers}>Get Users</Button>
         <Button onClick={this.toggleState('fix')}>

@@ -1,41 +1,28 @@
 const faker = require('faker')
+const randomness = require('../utils/randomness')
 
-const randomness = (probability, yes, no) =>
-    Math.random() < probability ? yes : no
-;
+const getFakeName = () => ({
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+})
 
-function* userGenerator(randomWords) {
-    while (true) {
+const getFakeAge = () => faker.random.number({ min: 18, max: 33 })
+
+const getRandomWord = () => faker.random.arrayElement(
+    faker.lorem.words(10).split(' ')
+)
+
+
+function* userGenerator(amount) {
+    do {
         yield {
             id: faker.random.uuid(),
-            name: randomness(
-                .9,
-                {
-                    firstName: faker.name.firstName(),
-                    lastName: faker.name.lastName(),
-                },
-                undefined,
-            ),
             email: faker.internet.email(),
-            arbitrary: randomness(
-                .6,
-                faker.random.arrayElement(randomWords),
-                '',
-            ),
-            age: randomness(
-                .75,
-                faker.random.number({
-                    min: 18,
-                    max: 33
-                }),
-                undefined,
-            ),
-            
+            name: randomness(.9, getFakeName(), undefined),
+            age: randomness(.75, getFakeAge(), undefined),
+            arbitrary: randomness(.6, getRandomWord(), ''),
         }
-    }
+    } while (amount--)
 }
 
-const getUser = (generator) => () => generator.next().value
-module.exports = (amount) => [...Array(amount)].map(getUser(userGenerator(
-    faker.lorem.words(10).split(' ')
-)))
+module.exports = (amount) => Array.from(userGenerator(amount))

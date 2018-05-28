@@ -20,7 +20,7 @@ class Breakpoints extends Component {
       <div>
         <h1>Fancy Breakpoints</h1>
         <List>
-          <li>Super fancy, much wow</li>
+          <li>HRX </li>
           <li>Show case in chrome</li>
           <li>Expressions</li>
           <li>Watches</li>

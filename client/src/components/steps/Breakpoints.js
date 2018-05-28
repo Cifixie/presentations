@@ -14,7 +14,9 @@ class Breakpoints extends Component {
     debugger
     users.forEach(u => {
       debugger
-      if (!this.state.fix) console.log(`user's ${u.name.firstName} age is ${u.age}`)
+      if (!this.state.fix && u.name) {
+        console.log(`user's ${u.name.firstName} age is ${u.age}`)
+      }
     })
   }
   toggleState = (key) => () => this.setState({
@@ -24,13 +26,14 @@ class Breakpoints extends Component {
   render() {
     return (
       <div>
-        <h1>Breakpoints (1/2)</h1>
+        <h1>Debugger (keyword)</h1>
         <p>
           <Code>Debugger</Code>: static breakpoint with in code
         </p>
         <List>
           <li>Easy way of setting breakpoints where needed</li>
           <li>Bit "under developed", but good thing to start with</li>
+          <li>Allows us to eval code paused</li>
         </List>
         <Button onClick={this.getUsers}>Get Users</Button>
         <Button onClick={this.toggleState('fix')}>

@@ -3,10 +3,13 @@ import { List, Code } from "../Components"
 
 export default () => (
     <Fragment>
-        <h1>Server debugging</h1>
+        <h1>Debugging on Server</h1>
         <List>
-            <li><Code>--inspect</Code> </li>
-            <li><Code>--inspect-brk</Code></li>
+            <li>
+                <a href="chrome://inspect" target="_blank">Node Inspector</a>
+            </li>
+            <li><Code>--inspect</Code> Starts debugging</li>
+            <li><Code>--inspect-brk</Code> ^ + Pauses ASAP</li>
         </List>
     </Fragment>
 )
