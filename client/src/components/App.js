@@ -5,16 +5,19 @@ import styled from "styled-components";
 
 import Presentation from "./Presentation";
 
+import Android from "./steps/Android";
 import Breakpoints from "./steps/Breakpoints";
-import Conditioning from "./steps/Conditioning";
 import Console from "./steps/Console";
+import Debugger from "./steps/Debugger";
+import Empty from "./steps/Empty";
 import Global from "./steps/Global";
 import Farewells from "./steps/Farewells";
 import Fyi from "./steps/Fyi";
 import Me from "./steps/Me";
 import Mental from "./steps/Mental";
-import Override from "./steps/Override";
 import Server from "./steps/Server";
+import SourceMaps from "./steps/SourceMaps";
+import Tests from "./steps/Tests";
 import Tools from "./steps/Tools";
 import Vscode from "./steps/Vscode";
 
@@ -45,25 +48,30 @@ class App extends Component {
           { x: 4500, y: 0, rotateY: 90 },
           { x: 1500, y: 4500, rotateX: 90 },
           { x: 4500, y: 3000, rotateY: 90 },
-          { x: 3000, y: 4500, rotateY: 90 },
+          { x: 3000, y: 4500, rotateY: 180 },
           { x: -3000, y: 4500, rotateY: 90 },
           { x: -1500, y: 4500, rotateX: 90 },
           { x: 4500, y: -3000, rotateX: 180 },
+          { x: 4500, y: -4500, rotateX: 180 },
+          { x: 5000, y: -5000, rotateX: 180 },
           { x: 0, y: 0, rotateY: 90 }
         ]}
       >
         <Me />
+        <SourceMaps />
         <Console />
+        <Debugger />
         <Breakpoints />
-        <Conditioning />
         <Global />
         <Server />
         <Vscode />
+        <Android />
         <Tools />
+        <Tests />
         <Mental />
         <Fyi />
-        <Override />
         <Farewells />
+        <Empty />
       </Presentation>
     );
   }

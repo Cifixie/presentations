@@ -5,26 +5,23 @@ import usersService from "../../services/users";
 class Breakpoints extends Component {
   getUsers = async () => {
     const users = await usersService.getUsers();
+    debugger;
     users.forEach(u => {
+      debugger;
       console.log(`user's ${u.name.firstName} age is ${u.age}`);
     });
   };
 
-  toggleState = key => () =>
-    this.setState({
-      [key]: !this.state[key]
-    });
-
   render() {
     return (
       <div>
-        <h1>Breakpoints</h1>
+        <h1>Debugger (keyword)</h1>
+        <p>
+          <Code>Debugger</Code>: static breakpoint within code
+        </p>
         <List>
-          <li>Supercharged, more elegant way</li>
-          <li>No need for code changes</li>
-          <li>
-            <strong>Next level:</strong> Expressions (Conditioning & Watches)
-          </li>
+          <li>Easy way of setting breakpoints where needed</li>
+          <li>A Hammer, one of my go-to-tools</li>
         </List>
         <Button onClick={this.getUsers}>Get Users</Button>
       </div>

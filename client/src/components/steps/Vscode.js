@@ -1,14 +1,14 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import { List } from "../Components";
+import { List, Code } from "../Components";
 
 const A = styled.a`
-  margin-left: 0.5em;
+  margin: auto 0.5em;
 `;
 
 export default () => (
   <Fragment>
-    <h1>Vscode integrations</h1>
+    <h1>VS Code integration</h1>
     <p>Debug in same environment where you code</p>
     <List>
       <li>
@@ -17,7 +17,10 @@ export default () => (
           an extenssion
         </A>
       </li>
-      <li />
+      <li>Go to debug "tab" and setup launch configurations</li>
+      <li>
+        <Code>Start debugging...</Code>
+      </li>
     </List>
   </Fragment>
 );

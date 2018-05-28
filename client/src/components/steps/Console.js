@@ -6,9 +6,8 @@ class Console extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
-      debug: false,
-      fix: false
+      count: 50,
+      debug: false
     };
   }
 
@@ -30,12 +29,7 @@ class Console extends Component {
     const users = await usersService.getUsers();
     if (this.state.debug) console.debug(users);
     users.forEach(u => {
-      if (this.state.fix) {
-        if (!u.name) console.table(u);
-        else console.log(`user's ${u.name.firstName} age is ${u.age}`);
-      } else {
-        console.log(`user's ${u.name.firstName} age is ${u.age}`);
-      }
+      console.log(`user's ${u.name.firstName} age is ${u.age}`);
     });
   };
   toggleState = key => () =>
@@ -54,6 +48,7 @@ class Console extends Component {
           <li>console.log</li>
           <li>console.debug</li>
           <li>console.table</li>
+          <li>console.count</li>
         </List>
         <Button bad onClick={this.decrease}>
           -
@@ -66,9 +61,6 @@ class Console extends Component {
         <Button onClick={this.getUsers}>getUsers</Button>
         <Button onClick={this.toggleState("debug")}>
           Debug ({this.state.debug ? "on" : "off"})
-        </Button>
-        <Button onClick={this.toggleState("fix")}>
-          Fix ({this.state.fix ? "on" : "off"})
         </Button>
       </div>
     );
