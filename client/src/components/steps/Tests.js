@@ -10,7 +10,7 @@ export default () => (
       <li>Code Review (Proper git history)</li>
       <li>Trust on your own and others code</li>
       <li>Well structured, readable, code</li>
-      <li>Less quessing, more talking</li>
+      <li>Less guessing, more talking</li>
     </List>
   </Fragment>
 );
