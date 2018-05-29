@@ -65,8 +65,8 @@ class App extends Component {
         <Global />
         <Server />
         <Android />
-        <Vscode />
         <Tests />
+        <Vscode />
         <Tools />
         <Mental />
         <Farewells />
