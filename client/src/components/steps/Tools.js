@@ -10,14 +10,12 @@ export default () => (
       <li>
         <span>Early detection:</span>
         <List>
-          <li>Types</li>
-          <li>Linting</li>
-          <li>autoformating</li>
-          <li>programming habbits</li>
+          <li>Types, Linting, automating, habbits, ...</li>
         </List>
       </li>
       <li>CI (Travis / Circle.io / Jenkins / ...)</li>
       <li>Bug-reporting (Sentry / Bugsnag / Airbrake / ...)</li>
+      <li>Git blame</li>
     </List>
   </Fragment>
 );

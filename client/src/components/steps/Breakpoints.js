@@ -10,11 +10,6 @@ class Breakpoints extends Component {
     });
   };
 
-  toggleState = key => () =>
-    this.setState({
-      [key]: !this.state[key]
-    });
-
   render() {
     return (
       <div>

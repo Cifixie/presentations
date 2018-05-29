@@ -10,14 +10,7 @@ export default () => (
       <li>Connect your phone via USB (wireless bit tricky)</li>
       <li>
         <span>Proxy traffic:</span>
-        <List>
-          <li>
-            <Code>adb reverse tcp:8080 tcp:8080</Code>
-          </li>
-          <li>
-            <Code>adb reverse tcp:3000 tcp:3000</Code>
-          </li>
-        </List>
+        <Code>adb reverse tcp:8080 tcp:8080</Code>
       </li>
     </List>
   </Fragment>

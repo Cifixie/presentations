@@ -3,7 +3,7 @@ import { List } from "../Components";
 
 export default () => (
   <Fragment>
-    <h1>Mental aspect of debugging</h1>
+    <h1>Mentality</h1>
     <List>
       <li>Often collaborative effort</li>
       <li>Debugging is also a big part of early development</li>

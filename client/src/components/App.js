@@ -63,13 +63,12 @@ class App extends Component {
         <Debugger />
         <Breakpoints />
         <Global />
+        <Android />
         <Server />
         <Vscode />
-        <Android />
-        <Tools />
         <Tests />
+        <Tools />
         <Mental />
-        <Fyi />
         <Farewells />
         <Empty />
       </Presentation>

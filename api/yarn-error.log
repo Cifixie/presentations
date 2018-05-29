@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/cifixie/.nvm/versions/node/v9.4.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test tests/utils/getUsers.test.js
+  /Users/cifixie/.nvm/versions/node/v9.4.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test
 
 PATH: 
   /usr/local/sbin:/Users/cifixie/.nvm/versions/node/v9.4.0/bin:/Users/cifixie/.yarn/bin:/Users/cifixie/Library/Android/sdk/tools:/Users/cifixie/Library/Android/sdk/platform-tools:/Users/cifixie/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
@@ -29,6 +29,7 @@ npm manifest:
     "scripts": {
       "start": "node src/index.js",
       "inspect": "node  --inspect src/index.js",
+      "inspect-brk": "node  --inspect-brk src/index.js",
       "test": "jest"
     },
     "devDependencies": {
@@ -3891,7 +3892,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest tests/utils/getUsers.test.js
+  Arguments: -c jest
   Directory: /Users/cifixie/Projects/presentations/debugging/api
   Output:
   

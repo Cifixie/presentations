@@ -3,13 +3,14 @@ import { List } from "../Components";
 
 export default () => (
   <Fragment>
-    <h1>Testing</h1>
-    <p>Easy way of finding bugs</p>
+    <h1>Testing / Developing</h1>
+    <p>Finding bugs is when writing them</p>
     <List>
-      <li>Basic Unit testing</li>
-      <li>Building trust</li>
-      <li>Readable code</li>
-      <li>Less quessing</li>
+      <li>Unit testing</li>
+      <li>Code Review (Proper git history)</li>
+      <li>Trust on your own and others code</li>
+      <li>Well structured, readable, code</li>
+      <li>Less quessing, more talking</li>
     </List>
   </Fragment>
 );

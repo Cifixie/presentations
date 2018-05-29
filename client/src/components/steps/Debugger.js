@@ -22,6 +22,7 @@ class Breakpoints extends Component {
         <List>
           <li>Easy way of setting breakpoints where needed</li>
           <li>A Hammer, one of my go-to-tools</li>
+          <li>Allows code evaluation</li>
         </List>
         <Button onClick={this.getUsers}>Get Users</Button>
       </div>
