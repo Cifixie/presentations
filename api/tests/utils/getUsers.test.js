@@ -23,14 +23,15 @@ test("User do have all properties", () => {
 test("Returned User do have all properties if probability is more than low", () => {
   mockRandom(1);
   const user = getUser();
+  debugger;
   expect(user).toHaveProperty("name");
   expect(user).toHaveProperty("age", undefined);
   expect(user).toHaveProperty("arbitrary", "");
 });
 
-test("User should always have a name", async () => {
+test("User should always have a name", () => {
   mockRandom(1);
-  (await getUsers(10)).forEach(user => {
+  getUsers(10).forEach(user => {
     expect(user).not.toHaveProperty("name", undefined);
   });
 });
