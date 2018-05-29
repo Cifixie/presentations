@@ -5,10 +5,9 @@ import usersService from "../../services/users";
 class Breakpoints extends Component {
   getUsers = async () => {
     const users = await usersService.getUsers();
-    users.forEach(u => {
-      console.log(`user's ${u.name.firstName} age is ${u.age}`);
-    });
+    users.forEach(this.logUsers);
   };
+  logUsers = u => console.log(`user's ${u.name.firstName} age is ${u.age}`);
 
   render() {
     return (

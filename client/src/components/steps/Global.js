@@ -29,6 +29,8 @@ export default () => (
         <li>Network</li>
         <li>Elements</li>
         <li>Extenssions</li>
+        <li>Local modifications</li>
+        <li>...</li>
       </List>
     </Right>
   </Fragment>

@@ -23,6 +23,9 @@ export const Button = styled.div`
 `;
 export const Dia = styled(Step)`
   width: 100vw !important;
+  * {
+    text-shadow: 1px 1px 2px #fff;
+  }
 `;
 
 export const List = styled.ul`

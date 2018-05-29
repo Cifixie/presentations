@@ -18,9 +18,6 @@ export default () => (
         </A>
       </li>
       <li>Go to debug "tab" and setup launch configurations</li>
-      <li>
-        <Code>Start debugging...</Code>
-      </li>
     </List>
   </Fragment>
 );

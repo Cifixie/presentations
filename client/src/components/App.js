@@ -53,7 +53,7 @@ class App extends Component {
           { x: -1500, y: 4500, rotateX: 90 },
           { x: 4500, y: -3000, rotateX: 180 },
           { x: 4500, y: -4500, rotateX: 180 },
-          { x: 5000, y: -5000, rotateX: 180 },
+          { x: 6000, y: -6000, rotateX: 180 },
           { x: 0, y: 0, rotateY: 90 }
         ]}
       >
@@ -63,8 +63,8 @@ class App extends Component {
         <Debugger />
         <Breakpoints />
         <Global />
-        <Android />
         <Server />
+        <Android />
         <Vscode />
         <Tests />
         <Tools />
