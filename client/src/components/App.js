@@ -62,12 +62,9 @@ class App extends Component {
         <Console />
         <Debugger />
         <Breakpoints />
-        <Global />
         <Server />
         <Android />
         <Tests />
-        <Vscode />
-        <Tools />
         <Mental />
         <Farewells />
         <Empty />
